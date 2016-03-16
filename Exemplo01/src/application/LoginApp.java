@@ -28,7 +28,10 @@ public class LoginApp extends Application {
 		txSenha = new PasswordField();
 		txSenha.setPromptText("Digite aqui sua senha");
 		btEntrar = new Button("Entrar");
+		btEntrar.setOnAction(e -> entrar());
 		btSair = new Button("Sair");
+		btSair.setOnAction(e -> sair());
+
 		pane.getChildren().addAll(txLogin, txSenha, btEntrar, btSair);
 	}
 
