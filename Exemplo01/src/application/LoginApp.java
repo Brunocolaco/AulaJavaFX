@@ -1,10 +1,11 @@
 package application;
 
-import javax.swing.JOptionPane;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -15,8 +16,8 @@ public class LoginApp extends Application {
 	private AnchorPane pane;
 	private TextField txLogin;
 	private PasswordField txSenha;
-	private Button Entrar;
-	private Button Sair;
+	private Button btEntrar;
+	private Button btSair;
 	private static Stage stage;
 
 	private void inicializaComponentes() {
@@ -26,9 +27,9 @@ public class LoginApp extends Application {
 		txLogin.setPromptText("Digite aqui seu login");
 		txSenha = new PasswordField();
 		txSenha.setPromptText("Digite aqui sua senha");
-		Entrar = new Button("Entrar");
-		Sair = new Button("Sair");
-		pane.getChildren().addAll(txLogin, txSenha, Entrar, Sair);
+		btEntrar = new Button("Entrar");
+		btSair = new Button("Sair");
+		pane.getChildren().addAll(txLogin, txSenha, btEntrar, btSair);
 	}
 
 	private void posicionaElementos() {
@@ -36,10 +37,10 @@ public class LoginApp extends Application {
 		txLogin.setLayoutY(50);
 		txSenha.setLayoutX((pane.getWidth() - txSenha.getWidth()) / 2);
 		txSenha.setLayoutY(100);
-		Entrar.setLayoutX((pane.getWidth() - Entrar.getWidth()) / 2);
-		Entrar.setLayoutY(150);
-		Sair.setLayoutX((pane.getWidth() - Sair.getWidth()) / 2);
-		Sair.setLayoutY(200);
+		btEntrar.setLayoutX((pane.getWidth() - btEntrar.getWidth()) / 2);
+		btEntrar.setLayoutY(150);
+		btSair.setLayoutX((pane.getWidth() - btSair.getWidth()) / 2);
+		btSair.setLayoutY(200);
 	}
 
 	// inicia a construÁ„o da tela
@@ -65,19 +66,32 @@ public class LoginApp extends Application {
 		// }
 		// });
 
-		Sair.setOnAction(e -> System.exit(0));
+		// Sair.setOnAction(e -> System.exit(0));
 	}
 
-	private void Sair() {
+	private void sair() {
 		System.exit(0);
 	}
 
-	private void Entrar() {
-		if ("123456".equals(txSenha.getText()) && "alunos".equals(txLogin.getText())) {
-			JOptionPane.showMessageDialog(null, "Acertou Miseravi", "Login", JOptionPane.INFORMATION_MESSAGE);
+	// private void Entrar() {
+	// if ("123456".equals(txSenha.getText()) &&
+	// "alunos".equals(txLogin.getText())) {
+	// JOptionPane.showMessageDialog(null, "Acertou Miseravi", "Login",
+	// JOptionPane.INFORMATION_MESSAGE);
 
+	// } else {
+	// JOptionPane.showMessageDialog(null, "ERROU", "Login",
+	// JOptionPane.ERROR_MESSAGE);
+	// }
+	// }
+
+	private void entrar() {
+		if ("123456".equals(txSenha.getText()) && "alunos".equals(txLogin.getText())) {
+			Alert alert = new Alert(AlertType.INFORMATION, "Login realizado", ButtonType.CLOSE);
+			alert.show();
 		} else {
-			JOptionPane.showMessageDialog(null, "ERROU", "Login", JOptionPane.ERROR_MESSAGE);
+			Alert alert = new Alert(AlertType.ERROR, "Usu√°rio ou seja inv√°lido", ButtonType.CLOSE);
+			alert.show();
 		}
 	}
 
