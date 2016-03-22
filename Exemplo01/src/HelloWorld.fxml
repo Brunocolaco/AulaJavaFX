@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="662.0" xmlns="http://javafx.com/javafx/8.0.51" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="539.0" prefWidth="122.0" />
+      <Button layoutX="35.0" layoutY="29.0" mnemonicParsing="false" text="Novo" />
+      <TabPane layoutX="123.0" prefHeight="545.0" prefWidth="538.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Dados Basicos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="39.0" layoutY="84.0" text="Nome:" />
+                        <TextField fx:id="tfNome" layoutX="84.0" layoutY="79.0" />
+                        <Pane layoutX="39.0" layoutY="403.0" prefHeight="61.0" prefWidth="456.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="btnSalvar" layoutX="27.0" layoutY="15.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+                              <Button fx:id="btnExcluir" layoutX="104.0" layoutY="15.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="22.0" layoutY="391.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Endereço">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
