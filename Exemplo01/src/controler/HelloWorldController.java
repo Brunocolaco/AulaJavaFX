@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 public class HelloWorldController {
 
 	@FXML
-	private TextField tfNome;
+	private TextField tfTexto;
 
 	@FXML
 	private Button btnSalvar;
